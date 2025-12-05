@@ -6,33 +6,175 @@
   <title>CROP CURE</title>
 
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #e8f5e9; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #e8f5e9;
+    }
 
     /* ---------------- LOGIN / SIGNUP PAGE ---------------- */
-    #loginPage { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; flex-direction: column; }
-    .login-box { background: white; padding: 30px; border-radius: 12px; width: 350px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-    .login-box input, .login-box select { width: 90%; padding: 12px; margin-top: 10px; border-radius: 8px; border: 1px solid #aaa; }
-    .login-btn { width: 95%; padding: 12px; margin-top: 15px; background: #2e7d32; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; }
-    .login-btn:hover { background: #1b5e20; }
+    #loginPage {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .login-box input, .login-box select {
+      width: 90%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+    }
+
+    .login-btn {
+      width: 95%;
+      padding: 12px;
+      margin-top: 15px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-btn:hover {
+      background: #1b5e20;
+    }
 
     /* ---------------- MAIN PAGE ---------------- */
-    #mainPage { display: none; }
-    header { background: #2e7d32; padding: 20px; color: #fff; text-align: center; font-size: 28px; font-weight: bold; position: relative; display: flex; align-items: center; justify-content: center; }
-    header img { width: 50px; margin-right: 15px; }
-    #logoutBtn { position: absolute; right: 20px; top: 15px; background: #c62828; color: white; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; }
-    #logoutBtn:hover { background: #8e0000; }
-    #mainLanguageSelect { position: absolute; right: 120px; top: 15px; padding: 5px; border-radius: 5px; border: 1px solid #aaa; }
+    #mainPage {
+      display: none;
+    }
 
-    .container { max-width: 900px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
-    #preview { width: 100%; max-height: 300px; object-fit: contain; margin-top: 15px; display: none; border-radius: 10px; }
-    #uploadBtn { background: #43a047; color: white; padding: 12px 25px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 15px; }
-    #uploadBtn:hover { background: #2e7d32; }
-    .btn { background: #43a047; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 15px; }
-    .btn:hover { background: #2e7d32; }
-    .btn.reset-btn { background:#00838f; }
-    .btn.reset-btn:hover { background:#006064; }
-    .result-box { margin-top: 20px; padding: 15px; background: #f1f8e9; border-left: 5px solid #66bb6a; border-radius: 10px; display: none; text-align: left; }
-    .history-box { margin-top: 30px; background: #f9fbe7; padding: 15px; border-radius: 10px; }
+    header {
+      background: #2e7d32;
+      padding: 20px;
+      color: #fff;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header img {
+      width: 50px;
+      margin-right: 15px;
+    }
+
+    /* LOGOUT BUTTON */
+    #logoutBtn {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #logoutBtn:hover {
+      background: #8e0000;
+    }
+
+    /* LANGUAGE SELECT */
+    #mainLanguageSelect {
+      position: absolute;
+      right: 120px;
+      top: 15px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    #preview {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      margin-top: 15px;
+      display: none;
+      border-radius: 10px;
+    }
+
+    /* Upload Image Button */
+    #uploadBtn {
+      background: #43a047;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    #uploadBtn:hover {
+      background: #2e7d32;
+    }
+
+    .btn {
+      background: #43a047;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    .btn:hover {
+      background: #2e7d32;
+    }
+
+    .btn.reset-btn {
+      background:#00838f;
+    }
+    .btn.reset-btn:hover {
+      background:#006064;
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f1f8e9;
+      border-left: 5px solid #66bb6a;
+      border-radius: 10px;
+      display: none;
+      text-align: left;
+    }
+
+    .history-box {
+      margin-top: 30px;
+      background: #f9fbe7;
+      padding: 15px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
@@ -54,7 +196,9 @@
     <button class="login-btn" id="loginBtn" onclick="login()">Login</button>
     <button class="login-btn" id="signupBtn" onclick="signup()" style="display:none;">Sign Up</button>
 
-    <p id="toggleText">Don't have an account? <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">Sign Up</span></p>
+    <p id="toggleText">
+      Don't have an account? <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">Sign Up</span>
+    </p>
   </div>
 </div>
 
@@ -63,11 +207,14 @@
   <header>
     <img src="C:\Users\ACER\Documents\Dhina\leaf image.jpg" alt="Logo">
     <b>CROP CURE</b>
+
+    <!-- LANGUAGE DROPDOWN ADDED -->
     <select id="mainLanguageSelect" onchange="changeMainLanguage()">
       <option value="en">English</option>
       <option value="ta">தமிழ்</option>
       <option value="hi">हिंदी</option>
     </select>
+
     <button id="logoutBtn" onclick="logout()">Logout</button>
   </header>
 
@@ -102,66 +249,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-  // --------- MULTI-LANGUAGE DICTIONARIES ----------
-  const languages = {
-    en: {
-      login: "Login", signup: "Sign Up", username: "Enter Username", password: "Enter Password", 
-      noAccount: "Don't have an account?", haveAccount: "Already have an account?", 
-      enterCredentials: "Enter username and password!", userExists: "Username already exists!", signupSuccess: "Sign Up Successful! Please login.", invalidLogin: "Invalid username or password!", 
-      uploadFirst: "Upload a leaf image first!", detectionComplete: "✔ Disease Detection Completed!", resetComplete: "✔ Reset Completed!",
-      main: {
-        uploadTitle:"Upload Plant Leaf Image", detectBtn:"Detect Disease", resetBtn:"Reset", 
-        historyTitle:"History", resultTitle:"Disease Result:", downloadBtn:"Download PDF", logoutBtn:"Logout"
-      },
-      diseases: [
-        { name:"Healthy Leaf", treatment:["No treatment needed.","Monitor plant regularly."], percentage:"0%", recommendations:["Maintain watering.","Proper sunlight.","Balanced soil nutrients."] },
-        { name:"Bacterial Blight", treatment:["Remove affected leaves.","Apply copper fungicide.","Ensure spacing."], percentage:"40%", recommendations:["Avoid overhead watering.","Clean tools.","Use resistant varieties."] },
-        { name:"Leaf Spot", treatment:["Prune infected leaves.","Use fungicide.","Water at base."], percentage:"30%", recommendations:["Monitor humidity.","Remove debris.","Maintain spacing."] },
-        { name:"Powdery Mildew", treatment:["Spray neem oil.","Remove infected leaves.","Ensure circulation."], percentage:"50%", recommendations:["Avoid crowded planting.","Increase sunlight.","Use resistant varieties."] },
-        { name:"Early Blight", treatment:["Apply fungicide.","Rotate crops.","Remove debris."], percentage:"45%", recommendations:["Test soil nutrients.","Avoid wetting leaves.","Use certified seeds."] },
-        { name:"Late Blight", treatment:["Remove infected plants.","Apply preventive fungicide.","Avoid overhead irrigation."], percentage:"60%", recommendations:["Keep drainage.","Monitor weather.","Balanced fertilization."] }
-      ]
-    },
-    ta: {
-      login: "உள்நுழையவும்", signup: "சேர்க", username: "பயனர் பெயர் உள்ளிடவும்", password: "கடவுச்சொல் உள்ளிடவும்",
-      noAccount: "கணக்கு இல்லையா?", haveAccount: "ஏற்கனவே கணக்கு உண்டு?", 
-      enterCredentials: "பயனர் பெயர் மற்றும் கடவுச்சொல்லை உள்ளிடவும்!", userExists: "பயனர் பெயர் ஏற்கனவே உள்ளது!", signupSuccess: "சேர்க்கை வெற்றிகரமாக முடிந்தது! தயவு செய்து உள்நுழைக.", invalidLogin: "தவறான பயனர் பெயர் அல்லது கடவுச்சொல்!", 
-      uploadFirst: "முதலில் இலை படம் பதிவேற்றவும்!", detectionComplete: "✔ நோய் கண்டறிதல் முடிந்தது!", resetComplete: "✔ மீட்டமைக்கல் முடிந்தது!",
-      main: {
-        uploadTitle:"மரத்தின் இலை படம் பதிவேற்றம் செய்யவும்", detectBtn:"நோய் கண்டறி", resetBtn:"மீட்டமைக்கவும்", 
-        historyTitle:"வரலாறு", resultTitle:"நோய் முடிவு:", downloadBtn:"PDF பதிவிறக்கவும்", logoutBtn:"வெளியேறு"
-      },
-      diseases: [
-        { name:"ஆரோக்கியமான இலை", treatment:["மருந்து தேவையில்லை.","மரத்தை வழக்கமாக பரிசோதிக்கவும்."], percentage:"0%", recommendations:["தண்ணீர் பராமரிப்பு செய்யவும்.","சூரியஒளி பெறும்.","மண் சத்துக்கள் சரியாக உள்ளன."] },
-        { name:"பாக்டீரியல் பிளைட்", treatment:["பாதிக்கப்பட்ட இலைகளை அகற்றவும்.","காப்பர் பூஞ்சை மருந்து பயன்படுத்தவும்.","இலையில் இடைவெளி வைக்கவும்."], percentage:"40%", recommendations:["மேலே நீர் ஊற்றாதே.","கருவிகள் சுத்தமாக வைக்கவும்.","எதிர்ப்பு வகைகளை பயன்படுத்தவும்."] },
-        { name:"இலை புள்ளி நோய்", treatment:["பாதிக்கப்பட்ட இலைகளை அறுத்து விடவும்.","மற்றும் பூஞ்சை மருந்து பயன்படுத்தவும்.","அடிப்படையில் நீர் ஊற்றவும்."], percentage:"30%", recommendations:["ஈரப்பதத்தை கண்காணிக்கவும்.","மரத் கழிவுகளை அகற்றவும்.","இலையின் இடைவெளியை பராமரிக்கவும்."] },
-        { name:"பொடி பூஞ்சை", treatment:["நீம் எண்ணெய் அல்லது துத்து மருந்து தெளிக்கவும்.","பாதிக்கப்பட்ட இலைகளை அகற்றவும்.","சுற்று வெளியில் காற்றோட்டம் உறுதி செய்யவும்."], percentage:"50%", recommendations:["அடிக்கடி நட்டாமல் வைக்கவும்.","சூரிய ஒளி அதிகம் பெறும்.","எதிர்ப்பு வகைகளை பயன்படுத்தவும்."] },
-        { name:"முன்னே பிளைட்", treatment:["பூஞ்சை மருந்து பயன்படுத்தவும்.","பயிர் சுற்றுப்பரிவர்த்தனை செய்யவும்.","பாதிக்கப்பட்ட இலைகளை அகற்றவும்."], percentage:"45%", recommendations:["மண் சத்துக்கள் பரிசோதிக்கவும்.","இலை கிழிக்காமல் நீர் ஊற்றவும்.","சான்றளிக்கப்பட்ட விதைகள் பயன்படுத்தவும்."] },
-        { name:"பின்னர் பிளைட்", treatment:["பாதிக்கப்பட்ட தாவரங்களை அகற்றவும்.","முன்னே தடுப்பு பூஞ்சை மருந்து தெளிக்கவும்.","மேலே நீர் ஊற்றாதே."], percentage:"60%", recommendations:["நீர் சரியாக பாய்ச்சி சென்று செல்லவும்.","வானிலை கண்காணிக்கவும்.","சத்துக்கள் சமன்செய்யவும்."] }
-      ]
-    },
-    hi: {
-      login: "लॉगिन", signup: "साइन अप", username: "उपयोगकर्ता नाम दर्ज करें", password: "पासवर्ड दर्ज करें",
-      noAccount: "खाता नहीं है?", haveAccount: "पहले से खाता है?", 
-      enterCredentials: "उपयोगकर्ता नाम और पासवर्ड दर्ज करें!", userExists: "उपयोगकर्ता नाम पहले से मौजूद है!", signupSuccess: "साइन अप सफल! कृपया लॉगिन करें।", invalidLogin: "अमान्य उपयोगकर्ता नाम या पासवर्ड!", 
-      uploadFirst: "पहले पत्ती छवि अपलोड करें!", detectionComplete: "✔ रोग पहचान पूरी हुई!", resetComplete: "✔ रीसेट पूरा हुआ!",
-      main: {
-        uploadTitle:"पौधे की पत्ती की छवि अपलोड करें", detectBtn:"रोग का पता लगाएं", resetBtn:"रीसेट", 
-        historyTitle:"इतिहास", resultTitle:"रोग का परिणाम:", downloadBtn:"PDF डाउनलोड करें", logoutBtn:"लॉगआउट"
-      },
-      diseases: [
-        { name:"स्वस्थ पत्ती", treatment:["कोई उपचार आवश्यक नहीं।","पौधे की नियमित निगरानी करें।"], percentage:"0%", recommendations:["सिंचाई बनाए रखें।","उचित धूप दें।","मिट्टी के पोषक तत्व संतुलित रखें।"] },
-        { name:"बैक्टीरियल ब्लाइट", treatment:["प्रभावित पत्तियों को हटा दें।","कॉपर फंजिसाइड लगाएँ।","स्थान सुनिश्चित करें।"], percentage:"40%", recommendations:["ऊपर से पानी न दें।","उपकरण साफ रखें।","प्रतिरोधी किस्में उपयोग करें।"] },
-        { name:"लीफ स्पॉट", treatment:["प्रभावित पत्तियों को छाँटें।","फंजिसाइड लगाएँ।","आधार पर पानी दें।"], percentage:"30%", recommendations:["नमी की निगरानी करें।","पौधों के अवशेष हटाएँ।","स्थान बनाए रखें।"] },
-        { name:"पाउडरी मिल्ड्यू", treatment:["नीम का तेल या सल्फर फंजिसाइड छिड़कें।","प्रभावित पत्तियाँ हटा दें।","सुनिश्चित करें कि हवा चलती रहे।"], percentage:"50%", recommendations:["भीड़ से बचें।","धूप बढ़ाएँ।","प्रतिरोधी किस्में उपयोग करें।"] },
-        { name:"अर्ली ब्लाइट", treatment:["फंजिसाइड लगाएँ।","फसल चक्र बदलें।","पौधों के अवशेष हटाएँ।"], percentage:"45%", recommendations:["मिट्टी परीक्षण करें।","पत्तियों को गीला न करें।","प्रमाणित बीज उपयोग करें।"] },
-        { name:"लेट ब्लाइट", treatment:["प्रभावित पौधों को तुरंत हटाएँ।","स्वस्थ पौधों पर फंजिसाइड लगाएँ।","ऊपर से पानी न दें।"], percentage:"60%", recommendations:["नाली बनाए रखें।","मौसम की निगरानी करें।","संतुलित उर्वरक दें।"] }
-      ]
-    }
+  // ---------- MAIN PAGE LANGUAGE DICTIONARY ----------
+  const mainLanguages = {
+    en: { uploadTitle:"Upload Plant Leaf Image", detectBtn:"Detect Disease", resetBtn:"Reset", historyTitle:"History", resultTitle:"Disease Result:", downloadBtn:"Download PDF", logoutBtn:"Logout" },
+    ta: { uploadTitle:"மரத்தின் இலை படம் பதிவேற்றம் செய்யவும்", detectBtn:"நோய் கண்டறி", resetBtn:"மீட்டமைக்கவும்", historyTitle:"வரலாறு", resultTitle:"நோய் முடிவு:", downloadBtn:"PDF பதிவிறக்கவும்", logoutBtn:"வெளியேறு" },
+    hi: { uploadTitle:"पौधे की पत्ती की छवि अपलोड करें", detectBtn:"रोग का पता लगाएं", resetBtn:"रीसेट", historyTitle:"इतिहास", resultTitle:"रोग का परिणाम:", downloadBtn:"PDF डाउनलोड करें", logoutBtn:"लॉगआउट" }
   };
-
-  let currentLang = "en"; // default language
-  let history = [];
 
   // ---------- LOGIN / SIGNUP TOGGLE ----------
   function toggleForm() {
@@ -171,48 +264,59 @@
     const toggleText = document.getElementById("toggleText");
 
     if (loginBtn.style.display !== "none") {
-      formTitle.innerText = languages[currentLang].signup;
+      formTitle.innerText = "Sign Up";
       loginBtn.style.display = "none";
       signupBtn.style.display = "block";
-      toggleText.innerHTML = languages[currentLang].haveAccount + ` <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">${languages[currentLang].login}</span>`;
+      toggleText.innerHTML = 'Already have an account? <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">Login</span>';
     } else {
-      formTitle.innerText = languages[currentLang].login;
+      formTitle.innerText = "Login";
       loginBtn.style.display = "block";
       signupBtn.style.display = "none";
-      toggleText.innerHTML = languages[currentLang].noAccount + ` <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">${languages[currentLang].signup}</span>`;
+      toggleText.innerHTML = 'Don\'t have an account? <span style="color:#2e7d32; cursor:pointer;" onclick="toggleForm()">Sign Up</span>';
     }
   }
 
   // ---------- SIGNUP ----------
   function signup() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-    if (!user || !pass) { alert(languages[currentLang].enterCredentials); return; }
-    if (localStorage.getItem(user)) { alert(languages[currentLang].userExists); return; }
+    if (!user || !pass) {
+      alert("Enter username and password!");
+      return;
+    }
+
+    if (localStorage.getItem(user)) {
+      alert("Username already exists!");
+      return;
+    }
 
     localStorage.setItem(user, pass);
-    alert(languages[currentLang].signupSuccess);
+    alert("Sign Up Successful! Please login.");
     toggleForm();
   }
 
   // ---------- LOGIN ----------
   function login() {
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-    currentLang = document.getElementById("languageSelect").value;
+    if (!user || !pass) {
+      alert("Enter username and password!");
+      return;
+    }
 
-    if (!user || !pass) { alert(languages[currentLang].enterCredentials); return; }
-
-    const storedPass = localStorage.getItem(user);
+    let storedPass = localStorage.getItem(user);
     if (storedPass && storedPass === pass) {
       document.getElementById("loginPage").style.display = "none";
       document.getElementById("mainPage").style.display = "block";
-      document.getElementById("mainLanguageSelect").value = currentLang;
-      updateMainTexts();
+
+      // Apply language from login page to main page
+      let selectedLang = document.getElementById("languageSelect").value;
+      document.getElementById("mainLanguageSelect").value = selectedLang;
+      changeMainLanguage();
     } else {
-      alert(languages[currentLang].invalidLogin);
+      alert("Invalid username or password!");
     }
   }
 
@@ -222,6 +326,20 @@
     document.getElementById("loginPage").style.display = "flex";
     document.getElementById("username").value = "";
     document.getElementById("password").value = "";
+  }
+
+  // ---------- CHANGE MAIN PAGE LANGUAGE ----------
+  function changeMainLanguage() {
+    const lang = document.getElementById("mainLanguageSelect").value;
+    const dict = mainLanguages[lang];
+
+    document.querySelector(".container h2").innerText = dict.uploadTitle;
+    document.querySelector(".btn:nth-of-type(1)").innerText = dict.detectBtn;
+    document.querySelector(".btn.reset-btn").innerText = dict.resetBtn;
+    document.querySelector(".history-box h3").innerText = dict.historyTitle;
+    document.querySelector("#resultBox h3").innerText = dict.resultTitle;
+    document.querySelector("#resultBox button").innerText = dict.downloadBtn;
+    document.getElementById("logoutBtn").innerText = dict.logoutBtn;
   }
 
   // ---------- IMAGE UPLOAD ----------
@@ -236,58 +354,67 @@
     }
   });
 
-  // ---------- DETECT DISEASE ----------
+  let history = [];
+
+  const fakeDiseases = [
+    { name:"Healthy Leaf", treatment:["No treatment needed.","Monitor plant regularly."], percentage:"0%", recommendations:["Maintain watering.","Proper sunlight.","Balanced soil nutrients."] },
+    { name:"Bacterial Blight", treatment:["Remove affected leaves.","Apply copper fungicide.","Ensure spacing."], percentage:"40%", recommendations:["Avoid overhead watering.","Clean tools.","Use resistant varieties."] },
+    { name:"Leaf Spot", treatment:["Prune infected leaves.","Use fungicide.","Water at base."], percentage:"30%", recommendations:["Monitor humidity.","Remove debris.","Maintain spacing."] },
+    { name:"Powdery Mildew", treatment:["Spray neem oil.","Remove infected leaves.","Ensure circulation."], percentage:"50%", recommendations:["Avoid crowded planting.","Increase sunlight.","Use resistant varieties."] },
+    { name:"Early Blight", treatment:["Apply fungicide.","Rotate crops.","Remove debris."], percentage:"45%", recommendations:["Test soil nutrients.","Avoid wetting leaves.","Use certified seeds."] },
+    { name:"Late Blight", treatment:["Remove infected plants.","Apply preventive fungicide.","Avoid overhead irrigation."], percentage:"60%", recommendations:["Keep drainage.","Monitor weather.","Balanced fertilization."] }
+  ];
+
   function detectDisease() {
     document.getElementById("clickSound").play();
     const resultBox = document.getElementById("resultBox");
     const resultText = document.getElementById("resultText");
 
-    if (!imageUpload.files[0]) { alert(languages[currentLang].uploadFirst); return; }
+    if (!imageUpload.files[0]) {
+      alert("Upload a leaf image first!");
+      return;
+    }
 
     resultBox.style.display = "block";
-    resultText.innerHTML = languages[currentLang].main.resultTitle + "<br>Analyzing image...";
+    resultText.innerHTML = "Analyzing image...";
 
     setTimeout(() => {
-      const randomDisease = languages[currentLang].diseases[Math.floor(Math.random() * languages[currentLang].diseases.length)];
-
-      let html = `<b>Disease:</b> ${randomDisease.name}<br>`;
-      html += `<b>Effect:</b> ${randomDisease.percentage}<br><br>`;
-      html += `<b>Treatment / Recommendation:</b><br>`;
-      randomDisease.treatment.forEach(step => { html += `<p>${step}</p>`; });
+      const randomDisease = fakeDiseases[Math.floor(Math.random() * fakeDiseases.length)];
+      let html = `<b>Disease:</b> ${randomDisease.name}<br><b>Effect:</b> ${randomDisease.percentage}<br><br><b>Treatment / Recommendation:</b><br>`;
+      randomDisease.treatment.forEach(step => html += `<p>${step}</p>`);
       html += `<b>Additional Recommendations:</b><br>`;
-      randomDisease.recommendations.forEach(rec => { html += `<p>${rec}</p>`; });
-
+      randomDisease.recommendations.forEach(rec => html += `<p>${rec}</p>`);
       resultText.innerHTML = html;
 
       history.push(randomDisease.name + " (" + randomDisease.percentage + ")");
       updateHistory();
 
       document.getElementById("successSound").play();
-      alert(languages[currentLang].detectionComplete);
+      alert("✔ Disease Detection Completed!");
     }, 1500);
   }
 
   function updateHistory() {
-    const list = document.getElementById("historyList");
+    let list = document.getElementById("historyList");
     list.innerHTML = "";
-    history.forEach(item => { const li = document.createElement("li"); li.innerText = item; list.appendChild(li); });
+    history.forEach((item) => {
+      let li = document.createElement("li");
+      li.innerText = item;
+      list.appendChild(li);
+    });
   }
 
-  // ---------- RESET ----------
   function resetAll() {
     imageUpload.value = "";
     preview.src = "";
     preview.style.display = "none";
+
     document.getElementById("resultBox").style.display = "none";
     document.getElementById("resultText").innerText = "";
-    document.getElementById("clickSound").pause();
-    document.getElementById("clickSound").currentTime = 0;
-    document.getElementById("successSound").pause();
-    document.getElementById("successSound").currentTime = 0;
-    alert(languages[currentLang].resetComplete);
+
+    alert("✔ Reset Completed!");
   }
 
-  // ---------- DOWNLOAD PDF ----------
   async function downloadPDF() {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF();
@@ -300,35 +427,20 @@
 
     const lines = document.getElementById("resultText").innerText.split('\n');
     let y = 50;
-    lines.forEach(line => { pdf.text(line, 20, y); y += 10; });
+    lines.forEach(line => {
+      pdf.text(line, 20, y);
+      y += 10;
+    });
 
-    pdf.text("Uploaded Image:", 20, y + 10);
-
-    const canvas = document.createElement("canvas");
-    canvas.width = preview.width; canvas.height = preview.height;
-    const ctx = canvas.getContext("2d");
+    let canvas = document.createElement("canvas");
+    canvas.width = preview.width;
+    canvas.height = preview.height;
+    let ctx = canvas.getContext("2d");
     ctx.drawImage(preview, 0, 0, canvas.width, canvas.height);
-    const imgData = canvas.toDataURL("image/jpeg");
+    let imgData = canvas.toDataURL("image/jpeg");
+
     pdf.addImage(imgData, "JPEG", 20, y + 20, 150, 120);
-
     pdf.save("Plant_Report.pdf");
-  }
-
-  // ---------- CHANGE MAIN PAGE LANGUAGE ----------
-  function changeMainLanguage() {
-    currentLang = document.getElementById("mainLanguageSelect").value;
-    updateMainTexts();
-  }
-
-  function updateMainTexts() {
-    document.querySelector("#mainPage h2").innerText = languages[currentLang].main.uploadTitle;
-    document.querySelector("#uploadBtn").innerText = languages[currentLang].main.uploadTitle.includes("Upload") ? "Upload Image" : languages[currentLang].main.uploadTitle;
-    document.querySelector(".btn").innerText = languages[currentLang].main.detectBtn;
-    document.querySelector(".btn.reset-btn").innerText = languages[currentLang].main.resetBtn;
-    document.querySelector("#resultBox h3").innerText = languages[currentLang].main.resultTitle;
-    document.querySelector("#resultBox button").innerText = languages[currentLang].main.downloadBtn;
-    document.querySelector(".history-box h3").innerText = languages[currentLang].main.historyTitle;
-    document.querySelector("#logoutBtn").innerText = languages[currentLang].main.logoutBtn;
   }
 </script>
 </body>

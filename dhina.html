@@ -415,10 +415,12 @@
     alert("✔ Reset Completed!");
   }
 
+  // ---------- UPDATED PDF FUNCTION (TWO PAGES) ----------
   async function downloadPDF() {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF();
 
+    // ---------- PAGE 1: Disease Info ----------
     pdf.setFontSize(18);
     pdf.text("Plant Disease Detection Report", 20, 20);
 
@@ -430,8 +432,19 @@
     lines.forEach(line => {
       pdf.text(line, 20, y);
       y += 10;
+      if (y > 270) { // Prevent text overflow
+        pdf.addPage();
+        y = 20;
+      }
     });
 
+    // ---------- PAGE 2: Leaf Image ----------
+    pdf.addPage();
+
+    pdf.setFontSize(18);
+    pdf.text("Uploaded Leaf Image", 20, 20);
+
+    // Resize image proportionally to fit page
     let canvas = document.createElement("canvas");
     canvas.width = preview.width;
     canvas.height = preview.height;
@@ -439,9 +452,16 @@
     ctx.drawImage(preview, 0, 0, canvas.width, canvas.height);
     let imgData = canvas.toDataURL("image/jpeg");
 
-    pdf.addImage(imgData, "JPEG", 20, y + 20, 150, 120);
+    // Fit image inside page margins
+    let imgProps = pdf.getImageProperties(imgData);
+    let pdfWidth = pdf.internal.pageSize.getWidth() - 40; // 20 margin left/right
+    let pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    pdf.addImage(imgData, "JPEG", 20, 30, pdfWidth, pdfHeight);
+
     pdf.save("Plant_Report.pdf");
   }
 </script>
 </body>
 </html>
+
